@@ -8,6 +8,8 @@ I decided to make step/dir driver out of spare Arduino and put it in-between con
 
 This step/dir driver written in 30 mins, there was no intention to make optimized code.
 
+Motors shut down after 2000 ms of inactivity.
+
 Wiring:
 ```
  |----------------|          |------------ | -- coil 1 ->  |-------------| -> Unipolar
@@ -15,17 +17,18 @@ Wiring:
  | (GRBL or any)  | --dir -> | @Arduino Uno| -- coil 3 ->  | or other    | -> coils
  |----------------|          |-------------| -- coil 4 ->  |-------------| ->  
 ```
-  Input: step and dir signals
-  Output: motor coil steps x2
+Input: 
+- step and dir signals x2
 
-  Motor enable not supported yet.
-  Motors shut down after 2000 ms of inactivity.
+Output: 
+- 4 motor coil control pins x2
 
-  TODO: 
-    - motor enable pin (make it simple, one pin for all motors)
-    - pwm to hold motors in plase instead of shutdown (PWM for common VCC pin)
-    - microstepping with full PWM for coils. Only via software PWM
-  
-  Author: Anton Viktorov, latonita@yandex.ru
+
+TODO: 
+- motor enable pin (make it simple, one pin for all motors)
+- pwm to hold motors in plase instead of shutdown (PWM for common VCC pin)
+- microstepping with full PWM for coils. Only via software PWM since there is not enough pins
+
+Author: Anton Viktorov, latonita@yandex.ru
 
 
