@@ -1,19 +1,20 @@
 # SoftwareStepDirUnipolarDriver
 Arduino-based step/dir driver for unipolar motors connected via ULN2003 or similar circuits.
 
-  Only 2 axis supported at the moment.
+Only 2 axis supported at the moment.
   
-  I don't have special motor drivers, only my own DIY ULN2003 based. 
-  To use my motors with "standart" cnc controllers I had to make step/dir driver out of Arduino 
-  and put it in-between controller (Arduino with GRBL for example) and my ULN2003 driver.
+I don't have special motor drivers (it is still travelling via china post), only my own DIY ULN2003 based. To use my motors with "standart" cnc controllers.
+I decided to make step/dir driver out of spare Arduino and put it in-between controller (another Arduino with GRBL) and my ULN2003 motor driver.
 
-  This step/dir driver written in 30 mins, there was no intention to make optimized code.
+This step/dir driver written in 30 mins, there was no intention to make optimized code.
 
-` |----------------|          |------------ | -- coil 1 ->  |-------------| -> `
-` | CNC Controller | --step-> | This driver | -- coil 2 ->  | ULN2003/2803| ->  Unipolar motor `
-` | (GRBL or any)  | --dir -> | @Arduino Uno| -- coil 3 ->  | or other    | -> `  
-` |----------------|          |-------------| -- coil 4 ->  |-------------| -> `
- 
+Wiring:
+```
+ |----------------|          |------------ | -- coil 1 ->  |-------------| -> Unipolar
+ | CNC Controller | --step-> | This driver | -- coil 2 ->  | ULN2003/2803| -> motor 
+ | (GRBL or any)  | --dir -> | @Arduino Uno| -- coil 3 ->  | or other    | -> coils
+ |----------------|          |-------------| -- coil 4 ->  |-------------| ->  
+```
   Input: step and dir signals
   Output: motor coil steps x2
 
