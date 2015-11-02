@@ -23,6 +23,10 @@ Input:
 Output: 
 - 4 motor coil control pins x2
 
+Pinout:
+
+  ![StepDir pinout](StepDirUnipolarPinout.png)
+
 
 TODO: 
 - motor enable pin (make it simple, one pin for all motors)
