@@ -1,4 +1,4 @@
-# SoftwareStepDirUnipolarDriver
+# SoftwareStepDirUnipolarDriver [![Build Status](https://api.travis-ci.org/latonita/SoftwareStepDirUnipolarDriver.svg?branch=master)](https://travis-ci.org/latonita/SoftwareStepDirUnipolarDriver
 Arduino-based step/dir driver for unipolar motors connected via ULN2003 or similar circuits.
 
 Only 2 axis supported at the moment.
